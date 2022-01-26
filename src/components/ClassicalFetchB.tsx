@@ -5,6 +5,7 @@ import { ChevronDoubleLeftIcon } from "@heroicons/react/solid";
 
 export const ClassicalFetchB: VFC = () => {
   const history = useHistory();
+  // contextのデータをとってくるだけ
   const { tasks } = useStateContext();
   console.log("rendered ClassicalFetchB");
   return (

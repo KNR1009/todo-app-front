@@ -4,7 +4,9 @@ import { useHistory } from "react-router-dom";
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
 
 export const ClassicalFetchA: VFC = () => {
+  // ページ遷移
   const history = useHistory();
+  // カスタムフックを呼び出してデータを格納(APIコール)
   const { isLoading, isError, tasks } = useClassicalFetch();
   console.log("rendered ClassicalFetchA");
   if (isLoading) return <div>{"Loading..."}</div>;

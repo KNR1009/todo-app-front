@@ -23,3 +23,6 @@ export const StateProvider: React.FC = ({ children }) => {
     </StateContext.Provider>
   );
 };
+
+// これの呼び出しで、valueで指定した値を自由に使える
+export const useStateContext = (): StateContextType => useContext(StateContext);

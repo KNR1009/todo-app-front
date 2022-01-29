@@ -6,7 +6,6 @@ import { Task } from "../types/types";
 
 const getTasks = async () => {
   const { data } = await axios.get<Task[]>("http://localhost:3000/tasks");
-  console.log(data);
   return data;
 };
 

@@ -3,6 +3,7 @@ import { useStateContext } from "../context/StateProvider";
 import axios from "axios";
 
 export const useClassicalFetch = () => {
+  // グローバルstateの更新関数
   const { tasks, setTasks } = useStateContext();
   const [isLoading, setLoading] = useState(false);
   const [isError, setError] = useState(false);
@@ -12,6 +13,7 @@ export const useClassicalFetch = () => {
     const fetchData = async () => {
       setLoading(true);
       setError(false);
+
       try {
         const res = await axios("http://localhost:3000/tasks");
         setTasks(res.data);

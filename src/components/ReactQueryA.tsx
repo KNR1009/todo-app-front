@@ -8,6 +8,7 @@ export const ReactQueryA: VFC = () => {
   const { status, data } = useQueryTasks();
 
   console.log("rendered ReactQueryA");
+  console.log(status);
   if (status === "loading") return <div>{"Loading..."}</div>;
   if (status === "error") return <div>{"Error"}</div>;
   return (

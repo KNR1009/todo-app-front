@@ -8,12 +8,15 @@ import { StateProvider } from "./context/StateProvider";
 import { Layout } from "./components/Layout";
 import { ReactQueryA } from "./components/ReactQueryA";
 import { ReactQueryB } from "./components/ReactQueryB";
+import { ContextA } from "./components/ContextA";
+import { ContextB } from "./components/ContextB";
+import { MainContext } from "./components/MainContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      retry: false,
-      refetchOnWindowFocus: false,
+      retry: false, // フェッチ失敗した場合に自動でリトライすることを無効
+      refetchOnWindowFocus: false, // 過剰なfetchの発生を無効
     },
   },
 });
@@ -36,6 +39,15 @@ const App: VFC = () => {
               </Route>
               <Route exact path="/fetch-b">
                 <ClassicalFetchB />
+              </Route>
+              <Route exact path="/context-a">
+                <ContextA />
+              </Route>
+              <Route exact path="/context-b">
+                <ContextB />
+              </Route>
+              <Route exact path="/main-context">
+                <MainContext />
               </Route>
             </Switch>
           </Layout>
